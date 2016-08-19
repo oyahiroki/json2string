@@ -10,7 +10,7 @@ public class Json2StringTestMain4 {
 	public static void main(String[] args) throws Exception {
 
 		// Original JSON (ex. response of REST API)
-		Path src = new File("sample/sample1.json").toPath();
+		Path src = new File("sample/sample4.json").toPath();
 		List<String> list = Files.readAllLines(src);
 		String json = String.join("", list);
 

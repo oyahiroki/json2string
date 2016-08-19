@@ -71,7 +71,7 @@ public class Json2StringTest {
 	@Test
 	public void testFormat4() throws Exception {
 		// Original JSON (ex. response of REST API)
-		Path src = new File("sample/sample1.json").toPath();
+		Path src = new File("sample/sample4.json").toPath();
 		List<String> list = Files.readAllLines(src);
 		String json = String.join("", list);
 
@@ -91,6 +91,28 @@ public class Json2StringTest {
 	}
 
 	@Test
+	public void testFormat5() throws Exception {
+		// Original JSON (ex. response of REST API)
+		Path src = new File("sample/sample5.json").toPath();
+		List<String> list = Files.readAllLines(src);
+		String json = String.join("", list);
+	
+		System.err.println("JSON: " + json);
+	
+		// Your configuration (in JavaScript)
+		String configJS = "return ''+json[0].precision;";
+		System.err.println("CONFIG: " + configJS);
+	
+		// Hello message
+		String msg = Json2String.format(json, configJS);
+	
+		// Hello
+		System.err.println("OUTPUT: " + msg);
+	
+		assertTrue(msg != null);
+	}
+
+	@Test
 	public void testFormat9() {
 		// Original JSON (ex. response of REST API)
 		String json = "{\"msg\":\"Hello\"}";
@@ -105,7 +127,7 @@ public class Json2StringTest {
 
 		// Hello
 		System.err.println("OUTPUT: " + msg);
-		
+
 		assertTrue(msg != null);
 	}
 
