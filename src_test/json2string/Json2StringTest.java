@@ -131,4 +131,48 @@ public class Json2StringTest {
 		assertTrue(msg != null);
 	}
 
+	/**
+	 * Test invalid JSON
+	 */
+	@Test
+	public void testFormat501() {
+		// Original JSON (ex. response of REST API)
+		String json = "{\"msg\":\"Hello\"}xx"; // invalid JSON
+		System.err.println("JSON: " + json);
+
+		// Your configuration (in JavaScript)
+		String configJS = "return \"\"+JSON.stringify(json, null, \"\");";
+		System.err.println("CONFIG: " + configJS);
+
+		// Hello message
+		String msg = Json2String.format(json, configJS);
+
+		// Hello
+		System.err.println("OUTPUT: " + msg);
+
+		assertTrue(msg == null);
+	}
+	
+	/**
+	 * Test invalid Config
+	 */
+	@Test
+	public void testFormat502() {
+		// Original JSON (ex. response of REST API)
+		String json = "{\"msg\":\"Hello\"}";
+		System.err.println("JSON: " + json);
+
+		// Your configuration (in JavaScript)
+		String configJS = "returnxx \"\"+JSON.stringify(json, null, \"\");"; // invalid Config
+		System.err.println("CONFIG: " + configJS);
+
+		// Hello message
+		String msg = Json2String.format(json, configJS);
+
+		// Hello
+		System.err.println("OUTPUT: " + msg);
+
+		assertTrue(msg == null);
+	}
+
 }
