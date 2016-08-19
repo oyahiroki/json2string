@@ -12,8 +12,13 @@ public class Json2String {
 				+ "msg = function(json){" + configJS + "}(json);";
 		try {
 			engine.eval(script);
-			String msg = (String) engine.eval("msg");
-			return msg;
+
+			Object obj = engine.eval("msg");
+			if (obj != null) {
+				return obj.toString();
+			} else {
+				return null;
+			}
 		} catch (ScriptException e) {
 			e.printStackTrace();
 			return null;

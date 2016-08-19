@@ -1,3 +1,0 @@
-JSON: {"msg":"xxx","params":[{"type":"msg","value":"Hello1"},{"type":"msg","value":"Hello2"}]}
-CONFIG: var s=''; for(var i=0; i<json.params.length; i++){ s+=json.params[i].value; } return s;
-OUTPUT: Hello1Hello2

@@ -1,3 +1,0 @@
-JSON: {"msg":"Hello"}
-CONFIG: return json.msg;
-OUTPUT: Hello

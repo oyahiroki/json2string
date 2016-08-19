@@ -1,3 +1,0 @@
-JSON: {"msg":"xxx","params":[{"type":"msg","value":"Hello1"},{"type":"msg","value":"Hello2"}]}
-CONFIG: return json.params[0].value;
-OUTPUT: Hello1
