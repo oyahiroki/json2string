@@ -7,7 +7,7 @@ see Json2StringTestMain3.java
 
 0.1 Initial
 0.2 Support numeric attribute in JSON.
-0.3 Support multi thread
+0.3 Support MultiThread
 
 Hiroki Oya
 
