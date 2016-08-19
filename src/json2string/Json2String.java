@@ -5,9 +5,15 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class Json2String {
-	static public String format(String json, String configJS) {
+
+	static ScriptEngine engine;
+
+	static {
 		ScriptEngineManager manager = new ScriptEngineManager();
-		ScriptEngine engine = manager.getEngineByName("JavaScript");
+		engine = manager.getEngineByName("JavaScript");
+	}
+
+	static synchronized public String format(String json, String configJS) {
 		String script = "var json = " + json + ";"//
 				+ "msg = function(json){" + configJS + "}(json);";
 		try {

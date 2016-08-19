@@ -1,6 +1,6 @@
 package json2string;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -96,19 +96,19 @@ public class Json2StringTest {
 		Path src = new File("sample/sample5.json").toPath();
 		List<String> list = Files.readAllLines(src);
 		String json = String.join("", list);
-	
+
 		System.err.println("JSON: " + json);
-	
+
 		// Your configuration (in JavaScript)
 		String configJS = "return ''+json[0].precision;";
 		System.err.println("CONFIG: " + configJS);
-	
+
 		// Hello message
 		String msg = Json2String.format(json, configJS);
-	
+
 		// Hello
 		System.err.println("OUTPUT: " + msg);
-	
+
 		assertTrue(msg != null);
 	}
 
@@ -152,7 +152,7 @@ public class Json2StringTest {
 
 		assertTrue(msg == null);
 	}
-	
+
 	/**
 	 * Test invalid Config
 	 */
@@ -163,7 +163,8 @@ public class Json2StringTest {
 		System.err.println("JSON: " + json);
 
 		// Your configuration (in JavaScript)
-		String configJS = "returnxx \"\"+JSON.stringify(json, null, \"\");"; // invalid Config
+		String configJS = "returnxx \"\"+JSON.stringify(json, null, \"\");"; // invalid
+																				// Config
 		System.err.println("CONFIG: " + configJS);
 
 		// Hello message
