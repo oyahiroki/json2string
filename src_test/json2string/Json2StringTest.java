@@ -12,7 +12,7 @@ import org.junit.Test;
 public class Json2StringTest {
 
 	@Test
-	public void testFormat1() {
+	public void testFormat001() {
 		// Original JSON (ex. response of REST API)
 		String json = "{\"msg\":\"Hello\"}";
 		System.err.println("JSON: " + json);
@@ -31,7 +31,7 @@ public class Json2StringTest {
 	}
 
 	@Test
-	public void testFormat2() {
+	public void testFormat002() {
 		// Original JSON (ex. response of REST API)
 		String json = "{\"msg\":\"xxx\",\"params\":[{\"type\":\"msg\",\"value\":\"Hello1\"},{\"type\":\"msg\",\"value\":\"Hello2\"}]}";
 		System.err.println("JSON: " + json);
@@ -50,7 +50,7 @@ public class Json2StringTest {
 	}
 
 	@Test
-	public void testFormat3() {
+	public void testFormat003() {
 		// Original JSON (ex. response of REST API)
 		String json = "{\"msg\":\"xxx\",\"params\":[{\"type\":\"msg\",\"value\":\"Hello1\"},{\"type\":\"msg\",\"value\":\"Hello2\"}]}";
 		System.err.println("JSON: " + json);
@@ -69,7 +69,7 @@ public class Json2StringTest {
 	}
 
 	@Test
-	public void testFormat4() throws Exception {
+	public void testFormat004() throws Exception {
 		// Original JSON (ex. response of REST API)
 		Path src = new File("sample/sample4.json").toPath();
 		List<String> list = Files.readAllLines(src);
@@ -91,7 +91,7 @@ public class Json2StringTest {
 	}
 
 	@Test
-	public void testFormat5() throws Exception {
+	public void testFormat005() throws Exception {
 		// Original JSON (ex. response of REST API)
 		Path src = new File("sample/sample5.json").toPath();
 		List<String> list = Files.readAllLines(src);
@@ -113,7 +113,7 @@ public class Json2StringTest {
 	}
 
 	@Test
-	public void testFormat9() {
+	public void testFormat009() {
 		// Original JSON (ex. response of REST API)
 		String json = "{\"msg\":\"Hello\"}";
 		System.err.println("JSON: " + json);
