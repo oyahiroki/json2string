@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="build" name="json2string">
+
+	<path id="mainproject.classpath">
+		<pathelement location="bin" />
+		<!-- pathelement location="../libs/XXX.jar" / -->
+	</path>
+
 	<path id="project.classpath">
 		<pathelement location="." />
 		<!-- pathelement location="./lib/XXX.jar" / -->
@@ -38,6 +44,14 @@
 	<target name="build" depends="zip">
 		<echo message="${ant.project.name}: ${ant.file}" />
 	</target>
+
+	<target name="javadoc">
+		<delete dir="javadoc" />
+		<javadoc packagenames="*" sourcepath="src" destdir="javadoc" overview="overview.html" author="false" encoding="UTF-8" locale="en_US" >
+			<classpath refid="mainproject.classpath" />
+		</javadoc>
+	</target>
+
 </project>
 
 
