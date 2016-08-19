@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="json2string">
+	<path id="project.classpath">
+		<pathelement location="." />
+		<!-- pathelement location="./lib/XXX.jar" / -->
+	</path>
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+	<target name="init">
+		<mkdir dir="bin" />
+		<mkdir dir="dist" />
+	</target>
+	<target name="compile" depends="init">
+		<javac destdir="bin" debug="on" debuglevel="source,lines" encoding="${build.encoding}" target="${build.target.level}" source="${build.target.level}">
+			<src path="src" />
+			<classpath refid="project.classpath" />
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="dist/json2string.jar">
+			<fileset dir="bin">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="zip" depends="jar">
+		<zip destfile="dist/json2string_src.zip">
+			<fileset dir="src">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="build" depends="zip">
+		<echo message="${ant.project.name}: ${ant.file}" />
+	</target>
+</project>
+
+
