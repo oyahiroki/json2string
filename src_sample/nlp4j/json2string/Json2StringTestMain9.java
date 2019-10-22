@@ -1,15 +1,15 @@
-package json2string;
+package nlp4j.json2string;
 
-public class Json2StringTestMain2 {
+public class Json2StringTestMain9 {
 
 	public static void main(String[] args) {
 
 		// Original JSON (ex. response of REST API)
-		String json = "{\"msg\":\"xxx\",\"params\":[{\"type\":\"msg\",\"value\":\"Hello1\"},{\"type\":\"msg\",\"value\":\"Hello2\"}]}";
+		String json = "{\"msg\":\"Hello\"}";
 		System.err.println("JSON: " + json);
 
 		// Your configuration (in JavaScript)
-		String configJS = "return json.params[0].value;";
+		String configJS = "return \"\"+JSON.stringify(json, null, \"\");";
 		System.err.println("CONFIG: " + configJS);
 
 		// Hello message

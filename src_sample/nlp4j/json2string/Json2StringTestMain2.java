@@ -1,6 +1,6 @@
-package json2string;
+package nlp4j.json2string;
 
-public class Json2StringTestMain3 {
+public class Json2StringTestMain2 {
 
 	public static void main(String[] args) {
 
@@ -9,7 +9,7 @@ public class Json2StringTestMain3 {
 		System.err.println("JSON: " + json);
 
 		// Your configuration (in JavaScript)
-		String configJS = "var s=''; for(var i=0; i<json.params.length; i++){ s+=json.params[i].value; } return s;";
+		String configJS = "return json.params[0].value;";
 		System.err.println("CONFIG: " + configJS);
 
 		// Hello message
