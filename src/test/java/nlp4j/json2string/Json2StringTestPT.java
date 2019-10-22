@@ -1,8 +1,9 @@
-package json2string;
+package nlp4j.json2string;
 
 import org.junit.Test;
 
 import junit.framework.TestCase;
+import nlp4j.json2string.Json2String;
 
 public class Json2StringTestPT extends TestCase {
 

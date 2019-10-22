@@ -1,4 +1,4 @@
-package json2string;
+package nlp4j.json2string;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;

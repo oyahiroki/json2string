@@ -1,4 +1,4 @@
-package json2string;
+package nlp4j.json2string;
 
 import static org.junit.Assert.assertTrue;
 
@@ -8,6 +8,8 @@ import java.nio.file.Path;
 import java.util.List;
 
 import org.junit.Test;
+
+import nlp4j.json2string.Json2String;
 
 public class Json2StringTest {
 
